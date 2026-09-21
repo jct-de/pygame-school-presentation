@@ -31,7 +31,7 @@ while running:
     # Guckt, welche Tasten aktuell gedrückt werden
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
-        player_pos.y -= 300 * dt
+        player_pos.y -= 300 * dt # 300 Pixel mal die Sekunde fortbewegung
     if keys[pygame.K_s]:
         player_pos.y += 300 * dt
     if keys[pygame.K_a]:
@@ -39,11 +39,14 @@ while running:
     if keys[pygame.K_d]:
         player_pos.x += 300 * dt
 
+    # Geschwindigkeitszuordnung je nach Koordinatensystem x | y
+
+
     # Gibt die Änderungen, die wir übergeben haben, an das Spiel weiter
     pygame.display.flip()
 
 
-    # Definiert die Bildwiederholrate / die Ticks vom Spiel
+    # Definiert die Bildwiederholrate / die Ticks vom Spiel (60 Ticks pro Sekunde)
     dt = clock.tick(60) / 1000
 
 pygame.quit()
